@@ -14,7 +14,7 @@ if (!fs.existsSync("sets.json"))
 }
 
 app.listen(port, function() {
-  console.log("listening on port " + port);
+  console.log("Now listening on port " + port);
 });
 
 app.use(express.static(__dirname + '/public'));
