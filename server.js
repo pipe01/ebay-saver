@@ -4,6 +4,8 @@ var fs = require("fs");
 var bodyParser = require('body-parser');
 var app = express();
 
+var port = 8080;
+
 var request = require("request");
 
 if (!fs.existsSync("sets.json"))
@@ -11,8 +13,8 @@ if (!fs.existsSync("sets.json"))
   fs.writeFileSync("sets.json", JSON.stringify([]));
 }
 
-app.listen(3000, function() {
-  console.log("listening on port 3000");
+app.listen(port, function() {
+  console.log("listening on port " + port);
 });
 
 app.use(express.static(__dirname + '/public'));
