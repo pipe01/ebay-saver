@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>eBay saver</title>
+    <!--Google fonts-->
+    <link href='//fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+    <link href='//fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+    <link href='//fonts.googleapis.com/css?family=Advent Pro' rel='stylesheet'>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="loading.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/abdmob/x2js/master/xml2json.js"></script>
+    <script type="text/javascript" src="loader.js"></script>
+  </head>
+  <body>
+    <div class="controls frame">
+      <label for="url">URL:</label>
+      <input type="text" id="url" name="url" onkeydown="if (event.keyCode == 13) {btnAdd();}" value="http://www.ebay.es/itm/Intel-Core-2-Extreme-QX6700-2-66-GHz-Quad-Core-8M-1066MHz-Processor-LGA775-CPU-/131652648367?hash=item1ea71bfdaf:g:Xg8AAOSwsFpWSAzc"/>
+      <div class="btn" style="margin-top:5px;" onclick="btnAdd()" add>Añadir</div>
+
+      <div class="frame" style="margin-top:15px;">
+        <h4 style="margin:0px;">
+          Cargar
+        </h4>
+        <select id="loadSet"></select>
+        <button type="button" onclick="currentset=$('#loadSet').val();$('#setname').val(currentset);loadItems();" id="btnload">Cargar</button>
+
+        <h4 style="margin-top:10px;">
+          Guardar
+        </h4>
+        <input type="text" id="setname" />
+        <button type="button" id="btnsave" style="margin-top:5px">Guardar</button>
+      </div>
+
+      <div class="frame" style="margin-top:10px">
+        <h4>Añadir item externo</h4>
+
+        <label for="cname">Titulo:</label>
+        <input type="text" id="cname" />
+        <label for="cprice">Precio por unidad:</label>
+        <input type="text" id="cprice" />
+        <label for="clink">Enlace a la página:</label>
+        <input type="text" id="clink" />
+        <button type="button" id="btncustom" style="margin-top:5px" onclick="btnCustom()">Añadir</button>
+      </div>
+
+      <p id="total" class="totallabel">
+        Total: 0 EUR
+      </p>
+    </div>
+
+    <div id="itemlist"></div>
+
+    <div class="silk" closing>
+      <div class="windows8" id="loading">
+        <div class="wBall" id="wBall_1">
+          <div class="wInnerBall"></div>
+        </div>
+        <div class="wBall" id="wBall_2">
+          <div class="wInnerBall"></div>
+        </div>
+        <div class="wBall" id="wBall_3">
+          <div class="wInnerBall"></div>
+        </div>
+        <div class="wBall" id="wBall_4">
+          <div class="wInnerBall"></div>
+        </div>
+        <div class="wBall" id="wBall_5">
+          <div class="wInnerBall"></div>
+        </div>
+      </div>
+    </div>
+
+    <template id="item-template">
+      <div class="item">
+        <img src="" class="pic" />
+        <a class="title" target="_BLANK"></a>
+        <p class="amount"></p>
+        <p class="price"></p>
+        <div class="btncontainer">
+          <div class="btn noselect" onclick="btnDupe(this)" add>duplicar</div>
+          <div class="btn noselect" onclick="btnRemove(this)" remove>quitar</div>
+        </div>
+      </div>
+    </template>
+  </body>
+</html>

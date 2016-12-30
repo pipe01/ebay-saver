@@ -1,0 +1,171 @@
+body {
+  background-color: #f6ffff;
+  /*background-color: red;*/
+  font-family: "Advent Pro";
+}
+
+.frame {
+  background-color: #f2f2f2;
+  border: 2px solid #cccccc;
+  border-radius: 7px;
+  padding: 5px;
+}
+
+.frame h4 {
+  margin:0px;
+}
+
+.controls {
+  width: 190px;
+  height: 500px;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+}
+
+#itemlist {
+  width: calc(100% - 220px);
+  /*height: 100%;*/
+}
+
+.item {
+  width: 100%;
+  height: 150px;
+  background-color: white;
+  padding: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  position: relative;
+  cursor: default;
+  border-left-style: solid;
+  border-left-color: lightblue;
+}
+
+.item .pic {
+  width: 150px;
+  height: 150px;
+  float: left;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+.item .title {
+  margin-top: 0px;
+  width: 100%;
+  font-family: "Abel";
+  text-decoration: none;
+}
+
+.item .price {
+  font-family: "Actor";
+  font-size: 1.5em;
+  position: absolute;
+  bottom: 10px;
+  left: 165px;
+  margin-bottom: 0px;
+}
+
+.item .amount {
+  font-size: 1.5em;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.btn {
+  text-align: center;
+  font-family: "Abel";
+  color: white;
+  width: 80px;
+  height: 25px;
+  border-radius: 5px;
+  cursor: default;
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+[remove] {
+  background-color: #ff2f2f;
+}
+
+[remove]:hover {
+  background-color: #ff5f5f;
+}
+
+[remove]:active {
+  background-color: #df0505;
+}
+
+[add] {
+  background-color: #0fdf0f;
+}
+
+[add]:hover {
+  background-color: #7fef7f;
+}
+
+[add]:active {
+  background-color: #0adf0a;
+}
+
+.totallabel {
+  position: absolute;
+  margin-bottom: 5px;
+  bottom: 0px;
+  font-size: 1.3em;
+}
+
+.btncontainer {
+  bottom: 10px;
+  right: 10px;
+  /*width: 300px;*/
+  position: absolute;
+  display: inline;
+}
+
+.authbox {
+  background-color: #0f0f0f;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
+.authbox p {
+  color: white;
+  margin: 0px;
+}
+
+.silk {
+  background-color: black;
+  opacity: 0.7;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  transition: opacity 0.5s;
+}
+
+.silk[closing] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+.hide {
+  display: none;
+}
